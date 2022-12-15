@@ -1,0 +1,10 @@
+.recipe-img{
+    height: 70%;
+    width: 70%;
+}
+.Recipes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+}
