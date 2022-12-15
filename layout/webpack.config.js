@@ -1,6 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
-const deps = require("./package.json").dependencies;
 
 module.exports = {
     mode: 'development',
@@ -34,20 +33,7 @@ module.exports = {
         exposes: {
           "./Header": "./src/Header.js",
           "./Footer": "./src/Footer.js"
-        },
-        shared: {
-          ...deps,
-          react: {
-            singleton: true,
-            eager:true,
-            requiredVersion: deps.react,
-          },
-          "react-dom": {
-            singleton: true,
-            eager:true,
-            requiredVersion: deps["react-dom"],
-          },
-        },
+        }
       }),
         new HtmlWebpackPlugin({
           template: "./public/index.html",
